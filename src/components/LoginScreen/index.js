@@ -24,8 +24,8 @@ export default function LoginScreen() {
     if(!response.data) {
       setHasAlert(true)
     }else if(response.data.userExist) {
-      if(response.data.hurbName) {
-        setName(response.data.hurbName)
+      if(response.data.data.hurbName) {
+        setName(response.data.data.hurbName)
       } else {
         setName("Hotel Sonar")
       }
