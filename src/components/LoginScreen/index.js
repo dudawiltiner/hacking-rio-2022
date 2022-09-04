@@ -1,4 +1,4 @@
-import { Button, CircularProgress, FormControl, TextField } from '@mui/material'
+import { Alert, Button, CircularProgress, FormControl, TextField } from '@mui/material'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAtom } from 'jotai'
@@ -10,6 +10,7 @@ import * as S from './style'
 export default function LoginScreen() {
   const [email, setEmail] = useState('')
   const [loading, setLoading] = useState(false)
+  const [hasAlert, setHasAlert] = useState(false)
   const [password, setPasswod] = useState('')
   const [, setName] = useAtom(nameAct)
   const history = useNavigate();
@@ -19,9 +20,23 @@ export default function LoginScreen() {
     setLoading(true)
     const response = await fetchAuthUser(email, password)
     console.log(response)
-    setName("Hotel Sonar")
+
+    if(!response.data) {
+      setHasAlert(true)
+    }else if(response.data.userExist) {
+      if(response.data.hurbName) {
+        setName(response.data.hurbName)
+      } else {
+        setName("Hotel Sonar")
+      }
+      
+      history("/")
+    } else {
+      setHasAlert(true)
+    }
+
     setLoading(false)
-    history("/")
+    
   }
 
   return (
@@ -60,6 +75,11 @@ export default function LoginScreen() {
             
         </FormControl>
       </S.Forms>
+      { hasAlert &&
+      <Alert onClose={() => setHasAlert(false)} style={{marginTop: "16px"}} variant="filled" severity="error">
+        Ocorreu algum erro, verfique os campos.
+      </Alert>
+      }
     </div>
   )
 }

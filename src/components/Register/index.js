@@ -1,21 +1,30 @@
-import { Button, CircularProgress, FormControl, TextField } from '@mui/material'
+import { Alert, Button, CircularProgress, FormControl, TextField } from '@mui/material'
 import React, { useState } from 'react'
 import { useAtom } from 'jotai'
 import { tabAct } from '../../store'
-import { fetchAuthUser } from '../../service/userAPI'
+import { fetchRegisterUser } from '../../service/userAPI'
 import * as S from './style'
 
 export default function RegisterScreen() {
   const [email, setEmail] = useState('')
+  const [name, setName] = useState('')
   const [, setTab] = useAtom(tabAct)
   const [loading, setLoading] = useState(false)
+  const [hasAlert, setHasAlert] = useState(false)
   const [password, setPasswod] = useState('')
 
   async function handleClick() {
     setLoading(true)
-    const response = await fetchAuthUser(email, password)
+    const response = await fetchRegisterUser(name, email, password)
     console.log(response)
-    setTab('login')
+
+    if(!response.data) {
+      setHasAlert(true)
+    } else if(response.data.message === "completed sucessfully") {
+      setTab('login')
+    } else {
+      setHasAlert(true)
+    }
     setLoading(false)
   }
 
@@ -30,7 +39,7 @@ export default function RegisterScreen() {
             id="standard-size-normal"
             size="normal"
             variant="standard"
-            onChange={(e)=> setEmail(e.target.value)}
+            onChange={(e)=> setName(e.target.value)}
             margin="dense"
           />
           <div 
@@ -64,6 +73,11 @@ export default function RegisterScreen() {
           </Button>
         </FormControl>
       </S.Forms>
+      { hasAlert &&
+      <Alert onClose={() => setHasAlert(false)} style={{marginTop: "16px"}} variant="filled" severity="error">
+        Ocorreu algum erro, verfique os campos.
+      </Alert>
+      }
     </div>
   )
 }

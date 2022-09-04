@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-const URL = `https://hurb-notificationapi.azurewebsites.net/api/registration`;
+const URL = `https://hurb-notificationapi.azurewebsites.net`;
 
 export const fetchAuthUser = (userEmail, password) => (
-  axios.post(URL, {
+  axios.post(`${URL}/login-validate`, {
     userEmail,
     password
   }, {
@@ -11,9 +11,22 @@ export const fetchAuthUser = (userEmail, password) => (
       Accept: 'application/json',
       'Content-Type': 'application/json',
   }})
-  .then(response => response.json())
-  .then(data => data)
+  .then(response => response)
   .catch((error) => error)
 );
 
-export default { fetchAuthUser };
+export const fetchRegisterUser = (hurbname, email, password) => (
+  axios.post(`${URL}/new-hurb`, {
+    hurbname,
+    email,
+    password
+  }, {
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+  }})
+  .then(response => response)
+  .catch((error) => error)
+);
+
+export default { fetchAuthUser, fetchRegisterUser };
