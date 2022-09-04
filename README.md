@@ -2,10 +2,9 @@
 
 ## Boas-vindas ao repositório do EcoHost - parte de Front-End
 
-Esse desafio foi proposto pela empresa Hurb e o problema cetral a ser reolvido é a "Emissão de carbono provocado pelo alto gasto de energia de Hotéis". A solução que propomos é  
-dição do perfil e compra de Pokémons. 
+Esse desafio foi proposto pela empresa Hurb e o problema cetral a ser reolvido é a "Emissão de carbono provocado pelo alto gasto de energia de Hotéis". A solução que propomos é uma plataforma de monitoramento de consumo de CO2 de hotéis e pousadas de médio e grande porte, que permita mapear hábitos de consumo de hóspedes e funcionários de modo a entender o comportamento do público e permitir elaborar soluções que tornem o negócio mais sustentável e inteligente. 
 
-Para a solução completa foi entregue um [Design](https://www.figma.com/file/lvi4bRgLUf50g6he36891R/Hacking.Rio---2022?node-id=0%3A1) para servir de guia na programação da aplicação. A aplicação EcoHost hospedada pode ser acessada a partir desse [link](https://hacking-rio-2022.vercel.app/login), só atentando para acessar em um computador pois a plataforma não é responsiva. Se desejar ver a aplicação funcionando em um breve vídeo, você pode assistir [aqui]((https://youtu.be/GvWNm6gEj24), mas logo abaixo disponibilizamos algumas imagens para mostrar a aplicação. Além do Back-End para cadastro e autenticação do usuário, mais detalhes [aqui](https://github.com/hackingrio/hackingrio-2022-ods-7-desafio-hurb-libra-34/tree/develop).
+Para a solução completa foi entregue um [Design](https://www.figma.com/file/lvi4bRgLUf50g6he36891R/Hacking.Rio---2022?node-id=0%3A1) para servir de guia na programação da aplicação. A aplicação EcoHost hospedada pode ser acessada a partir desse [link](https://hacking-rio-2022.vercel.app/login), só atentando para acessar em um computador pois a plataforma não é responsiva. Se desejar ver a aplicação funcionando em um breve vídeo, você pode assistir [aqui](https://youtu.be/GvWNm6gEj24), mas logo abaixo disponibilizamos algumas imagens para mostrar a aplicação. Além do Back-End para cadastro e autenticação do usuário, mais detalhes [aqui](https://github.com/hackingrio/hackingrio-2022-ods-7-desafio-hurb-libra-34/tree/develop).
 ### As ferramentas principais utilizadas no front-end foram:
 
 [React](https://reactjs.org/)<br>
