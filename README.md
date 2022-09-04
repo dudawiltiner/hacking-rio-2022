@@ -37,7 +37,7 @@ Para a solução completa foi entregue um [Design](https://www.figma.com/file/lv
 
 ## Organização do projeto:
 
-O projeto foi feito seguindo o Kanban, que pode ser visto como um processo ágil e transparente na organização dos projetos de desenvolvimento e foi muito útil para o time no fluxo de trabalho e na divisão de tarefas. Você pode visualizar o Kanban que a equipe utilizou no Azure neste [link](https://t).
+O projeto foi feito seguindo o Kanban, que pode ser visto como um processo ágil e transparente na organização dos projetos de desenvolvimento e foi muito útil para o time no fluxo de trabalho e na divisão de tarefas. Você pode visualizar o Kanban que a equipe utilizou no Azure.
 
 <div align="center">
   <img src="./images/azure.png" margin="10px" width="700" alt="azure"/>
@@ -45,7 +45,7 @@ O projeto foi feito seguindo o Kanban, que pode ser visto como um processo ágil
 
 ## Desenvolvimento do Back-End:
 
-A parte de autenticação do usuário, registro e atualização da senha, era uma parte opcional do projeto. A equipe optou por criar uma API do zero feita em Java. Ficou responsável por uma única pessoa, a Eduarda Wiltiner, já que ela demonstrou interesse em demonstrar as habilidades full-stack. O respositório e as ferramentas utilizadas para a criação do processo de autenticação do usuário através de uma API Java está registrado no repositório [API Auth Java](https://github.com/dudawiltiner/api-auth-java). A documentação da API tbm pode ser acessada [aqui](https://api-auth-java.herokuapp.com/swagger-ui.html) para mais detalhes.
+EX: A parte de autenticação do usuário, registro e atualização da senha, era uma parte opcional do projeto. A equipe optou por criar uma API do zero feita em Java. Ficou responsável por uma única pessoa, a Eduarda Wiltiner, já que ela demonstrou interesse em demonstrar as habilidades full-stack. O respositório e as ferramentas utilizadas para a criação do processo de autenticação do usuário através de uma API Java está registrado no repositório [API Auth Java](https://github.com/dudawiltiner/api-auth-java). A documentação da API tbm pode ser acessada [aqui](https://api-auth-java.herokuapp.com/swagger-ui.html) para mais detalhes.
 
 ## Como Instalar e rodar a aplicação localmente:
 
