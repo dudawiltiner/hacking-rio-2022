@@ -1,8 +1,6 @@
 // @mui
 import PropTypes from 'prop-types';
 import { Box, Stack, Link, Card, Button, Divider, Typography, CardHeader } from '@mui/material';
-// utils
-import { fToNow } from '../../../utils/formatTime';
 // components
 import Iconify from '../../../components/Iconify';
 import Scrollbar from '../../../components/Scrollbar';
@@ -15,10 +13,10 @@ AppNewsUpdate.propTypes = {
   list: PropTypes.array.isRequired,
 };
 
-export default function AppNewsUpdate({ title, subheader, list, ...other }) {
+export default function AppNewsUpdate({ subheader, list, ...other }) {
   return (
     <Card {...other}>
-      <CardHeader title={title} subheader={subheader} />
+      <CardHeader title={"Taxa de carbono nos Hotéis"} subheader={subheader} />
 
       <Scrollbar>
         <Stack spacing={3} sx={{ p: 3, pr: 0 }}>
@@ -45,7 +43,7 @@ NewsItem.propTypes = {
   news: PropTypes.shape({
     description: PropTypes.string,
     image: PropTypes.string,
-    postedAt: PropTypes.instanceOf(Date),
+    postedAt: PropTypes.string,
     title: PropTypes.string,
   }),
 };
@@ -57,7 +55,7 @@ function NewsItem({ news }) {
     <Stack direction="row" alignItems="center" spacing={2}>
       <Box component="img" alt={title} src={image} sx={{ width: 48, height: 48, borderRadius: 1.5, flexShrink: 0 }} />
 
-      <Box sx={{ minWidth: 240, flexGrow: 1 }}>
+      <Box sx={{ minWidth: 140, flexGrow: 3}}>
         <Link color="inherit" variant="subtitle2" underline="hover" noWrap>
           {title}
         </Link>
@@ -68,7 +66,11 @@ function NewsItem({ news }) {
       </Box>
 
       <Typography variant="caption" sx={{ pr: 3, flexShrink: 0, color: 'text.secondary' }}>
-        {fToNow(postedAt)}
+        <p>{"4 estrelas"}</p>
+      </Typography>
+
+      <Typography variant="caption" sx={{ pr: 3, flexShrink: 0, color: 'text.secondary' }}>
+        <p style={{color:"red"}}>{postedAt}</p>
       </Typography>
     </Stack>
   );

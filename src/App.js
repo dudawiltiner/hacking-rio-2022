@@ -1,4 +1,5 @@
 // routes
+import { Provider } from 'jotai'
 import Router from './routes';
 // theme
 import ThemeProvider from './theme';
@@ -11,9 +12,11 @@ import { BaseOptionChartStyle } from './components/chart/BaseOptionChart';
 export default function App() {
   return (
     <ThemeProvider>
-      <ScrollToTop />
-      <BaseOptionChartStyle />
-      <Router />
+      <Provider>
+        <ScrollToTop />
+        <BaseOptionChartStyle />
+        <Router />
+      </Provider>
     </ThemeProvider>
   );
 }

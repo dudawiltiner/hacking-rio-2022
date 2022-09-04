@@ -31,10 +31,10 @@ import USERLIST from '../_mock/user';
 // ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
-  { id: 'name', label: 'Name', alignRight: false },
-  { id: 'company', label: 'Company', alignRight: false },
-  { id: 'role', label: 'Role', alignRight: false },
-  { id: 'isVerified', label: 'Verified', alignRight: false },
+  { id: 'name', label: 'Nome', alignRight: false },
+  { id: 'company', label: 'Hotel', alignRight: false },
+  { id: 'role', label: 'Posição', alignRight: false },
+  { id: 'isVerified', label: 'Verificado', alignRight: false },
   { id: 'status', label: 'Status', alignRight: false },
   { id: '' },
 ];
@@ -71,6 +71,7 @@ function applySortFilter(array, comparator, query) {
 }
 
 export default function User() {
+  document.body.style.overflow = "auto"
   const [page, setPage] = useState(0);
 
   const [order, setOrder] = useState('asc');
@@ -137,10 +138,10 @@ export default function User() {
       <Container>
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
           <Typography variant="h4" gutterBottom>
-            User
+            Controle de acesso
           </Typography>
           <Button variant="contained" component={RouterLink} to="#" startIcon={<Iconify icon="eva:plus-fill" />}>
-            New User
+            Novo usuário
           </Button>
         </Stack>
 
